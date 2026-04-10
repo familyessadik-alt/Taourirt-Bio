@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <!-- الكلمات المفتاحية المخفية لتحسين محركات البحث -->
   <meta name="keywords" content="عسل طبيعي, زيت زيتون, عسل مغربي, زيت زيتون طبيعي, منتوجات تاوريرت, تاوريرت بيو, عسل عضوي, زيت زيتون بكر, منتجات طبيعية, Taourirt Bio, honey, olive oil, Moroccan honey, organic honey, extra virgin olive oil">
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="RC9WdhK_IhfTpNOrEoU3wlHiV0ykVo0UV9bMIJTiaZc" />
   <title>تاوريرت بيو | عسل وزيت زيتون طبيعي</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -42,7 +44,6 @@
     .header-container { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding: 0 20px; }
     .logo-text { font-size: 1.9rem; font-weight: 800; color: var(--primary-gold); letter-spacing: -0.5px; }
     .logo-text span { color: var(--primary-dark); font-weight: 700; }
-    /* تم إزالة user-actions من الهيدر */
 
     /* أيقونات الخدمات */
     .services-icons { background: white; padding: 20px 0; margin: 16px 20px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
@@ -113,7 +114,6 @@
       animation: iconGlow 2s infinite alternate;
     }
     @keyframes iconGlow { 0% { box-shadow: 0 0 5px 2px #0d47a1, 0 2px 6px rgba(0,0,0,0.2); } 50% { box-shadow: 0 0 12px 5px #000, 0 2px 8px rgba(0,0,0,0.3); } 100% { box-shadow: 0 0 5px 2px #0d47a1, 0 2px 6px rgba(0,0,0,0.2); } }
-    /* عداد السلة داخل الشريط السفلي */
     .cart-badge-bottom {
       position: absolute; top: -5px; right: 5px;
       background: var(--error-red); color: white; border-radius: 50%;
@@ -155,7 +155,6 @@
 <div class="main-header">
   <div class="header-container">
     <div class="logo"><div class="logo-text">تاوريرت<span> بيو</span></div></div>
-    <!-- أيقونة السلة تم نقلها إلى الشريط السفلي -->
   </div>
 </div>
 
@@ -205,7 +204,7 @@
   </div>
 </div>
 
-<!-- شريط التنقل السفلي (تم إضافة أيقونة السلة) -->
+<!-- شريط التنقل السفلي -->
 <nav class="bottom-nav">
   <a href="#" onclick="scrollToSection('oil'); return false;"><img src="https://i.ibb.co/bg8G4S4r/Picsart-26-04-04-20-42-39-503.png" alt="زيت"><b data-i18n="nav_oil">زيت الزيتون</b></a>
   <a href="#" onclick="scrollToSection('honey'); return false;"><img src="https://i.ibb.co/Kx7g1SRJ/Picsart-26-04-04-20-43-16-608.png" alt="عسل"><b data-i18n="nav_honey">عسل طبيعي</b></a>
@@ -262,7 +261,7 @@
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  // ======================== نظام الترجمة (مضاف إليه nav_cart) ========================
+  // ======================== نظام الترجمة ========================
   const translations = {
     ar: {
       top_natural: "منتوجات طبيعية 100%", top_shipping: "توصيل سريع", top_contact: "تواصل معنا", top_quality: "جودة تاوريرت الأصيلة",
@@ -376,10 +375,8 @@
   function updateCartUI() {
     const t = translations[currentLang];
     const total = cart.reduce((sum, item) => sum + item.price, 0);
-    // تحديث العداد في الشريط السفلي
     const badgeBottom = document.getElementById('cartBadgeBottom');
     if (badgeBottom) badgeBottom.textContent = cart.length;
-    // تحديث داخل المودال
     const totalSpan = document.getElementById('cartTotal');
     const listDiv = document.getElementById('cartItemsList');
     if (totalSpan) totalSpan.textContent = total;
