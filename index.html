@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <!-- الكلمات المفتاحية المخفية لتحسين محركات البحث -->
+  <meta name="keywords" content="عسل طبيعي, زيت زيتون, عسل مغربي, زيت زيتون طبيعي, منتوجات تاوريرت, تاوريرت بيو, عسل عضوي, زيت زيتون بكر, منتجات طبيعية, Taourirt Bio, honey, olive oil, Moroccan honey, organic honey, extra virgin olive oil">
+  <title>تاوريرت بيو | عسل وزيت زيتون طبيعي</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- خط Cairo -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f5f5f5;
+      color: #1a1a1a;
+      direction: rtl;
+      padding-bottom: 85px;
+      scroll-behavior: smooth;
+    }
+    :root {
+      --primary-gold: #d4af37;
+      --primary-dark: #1a1a1a;
+      --oil-green: #556b2f;
+      --white: #ffffff;
+      --error-red: #e74c3c;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* الشريط العلوي */
+    .top-bar { background-color: #1a1a1a; color: #ccc; font-size: 0.75rem; padding: 6px 0; }
+    .top-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 0 20px; gap: 10px; }
+    .top-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .top-links a { color: #ddd; transition: color 0.2s; }
+    .top-links a:hover { color: var(--primary-gold); }
+    .top-offer { color: var(--primary-gold); font-weight: 500; }
+
+    /* الرأس */
+    .main-header { background: var(--white); padding: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .header-container { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding: 0 20px; }
+    .logo-text { font-size: 1.9rem; font-weight: 800; color: var(--primary-gold); letter-spacing: -0.5px; }
+    .logo-text span { color: var(--primary-dark); font-weight: 700; }
+    /* تم إزالة user-actions من الهيدر */
+
+    /* أيقونات الخدمات */
+    .services-icons { background: white; padding: 20px 0; margin: 16px 20px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+    .services-grid { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; padding: 0 20px; }
+    .service-card { text-align: center; flex: 1; min-width: 100px; }
+    .service-card i { font-size: 2.2rem; color: var(--primary-gold); background: #fff2e5; padding: 12px; border-radius: 50%; margin-bottom: 10px; display: inline-block; }
+    .service-card h4 { font-size: 0.9rem; font-weight: 700; }
+    .service-card p { font-size: 0.7rem; color: #666; }
+
+    /* الفيديو */
+    .video-section { margin: 0 20px 25px 20px; }
+    .video-title { text-align: center; font-size: 1.4rem; font-weight: bold; margin-bottom: 12px; color: var(--oil-green); }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 20px; box-shadow: 0 0 0 4px #0d47a1, 0 0 20px 8px rgba(13,71,161,0.6); animation: borderGlow 2s infinite alternate; }
+    @keyframes borderGlow { 0% { box-shadow: 0 0 0 4px #0d47a1, 0 0 20px 8px rgba(13,71,161,0.6); } 50% { box-shadow: 0 0 0 4px #c62828, 0 0 25px 12px rgba(198,40,40,0.7); } 100% { box-shadow: 0 0 0 4px #0d47a1, 0 0 20px 8px rgba(13,71,161,0.6); } }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; }
+    .mute-button-container { text-align: center; margin-top: 12px; }
+    .mute-btn { background: #000; color: var(--primary-gold); border: 2px solid var(--primary-gold); border-radius: 40px; padding: 8px 20px; font-size: 1rem; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+    .mute-btn:hover { background: var(--primary-gold); color: #000; }
+
+    /* المنتجات */
+    .section-title { max-width: 1300px; margin: 30px auto 15px; padding: 0 20px; font-size: 1.6rem; font-weight: 800; display: flex; align-items: baseline; justify-content: space-between; }
+    .section-title a { display: none; }
+    .products-grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 20px; padding: 0 20px 30px; }
+    .product-card { background: white; border-radius: 12px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #f0e6d2; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.1); border-color: var(--primary-gold); }
+    .product-card.highlight { border: 3px solid var(--primary-gold); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); transform: scale(1.02); }
+    .product-img { width: 100%; height: 200px; object-fit: contain; background: #fafafa; padding: 15px; }
+    .product-info { padding: 12px 12px 20px; }
+    .product-title { font-size: 0.9rem; font-weight: 700; min-height: 42px; margin-bottom: 6px; color: #1f1f1f; }
+    .product-price { color: var(--primary-gold); font-weight: 800; font-size: 1.2rem; margin: 8px 0 4px; }
+    .add-to-cart-btn { background: var(--primary-dark); color: var(--primary-gold); border: 1px solid var(--primary-gold); border-radius: 30px; padding: 8px 0; width: 100%; font-weight: bold; margin-top: 12px; cursor: pointer; transition: all 0.2s; font-family: 'Cairo', sans-serif; }
+    .add-to-cart-btn:hover { background: var(--primary-gold); color: black; }
+    .add-to-cart-btn.added { background: var(--error-red); color: white; border-color: var(--error-red); }
+
+    /* مودال السلة */
+    .cart-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 1000; }
+    .cart-modal.show { display: flex; }
+    .cart-inner { background: white; border-radius: 20px; max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 20px; text-align: right; }
+    .cart-header-modal { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--primary-gold); padding-bottom: 10px; margin-bottom: 15px; }
+    .cart-header-modal h3 { font-size: 1.5rem; color: var(--oil-green); }
+    .close-cart { background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #888; }
+    .cart-items-list { margin-bottom: 20px; }
+    .cart-row { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #ddd; padding: 8px 0; }
+    .cart-total { text-align: center; font-weight: 900; font-size: 1.3rem; margin: 15px 0; color: var(--oil-green); }
+    .cart-input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ddd; border-radius: 10px; font-family: inherit; transition: border 0.2s; }
+    .cart-input.error { border-color: var(--error-red); background-color: #fff5f5; }
+    .btn-wa { background: #25D366; border: none; color: white; padding: 12px; border-radius: 10px; font-weight: bold; width: 100%; margin-top: 10px; cursor: pointer; font-size: 1rem; }
+    .btn-clear { background: none; border: none; color: var(--error-red); width: 100%; margin-top: 10px; font-weight: bold; cursor: pointer; }
+    .error-message { color: var(--error-red); font-size: 0.8rem; margin-top: 5px; text-align: center; min-height: 20px; }
+
+    /* شريط التنقل السفلي */
+    .bottom-nav {
+      position: fixed; bottom: 12px; left: 12px; right: 12px;
+      background: var(--primary-gold); border-radius: 28px; border-top: 2px solid #b8941a;
+      display: flex; justify-content: space-around; align-items: center; padding: 8px 0;
+      z-index: 90; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      max-width: 900px; margin: 0 auto; flex-wrap: wrap;
+    }
+    .bottom-nav a, .bottom-nav button {
+      background: none; border: none; text-decoration: none;
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      min-width: 65px; cursor: pointer; color: black; font-weight: 600; font-size: 11px;
+      position: relative;
+    }
+    .bottom-nav img {
+      width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      animation: iconGlow 2s infinite alternate;
+    }
+    @keyframes iconGlow { 0% { box-shadow: 0 0 5px 2px #0d47a1, 0 2px 6px rgba(0,0,0,0.2); } 50% { box-shadow: 0 0 12px 5px #000, 0 2px 8px rgba(0,0,0,0.3); } 100% { box-shadow: 0 0 5px 2px #0d47a1, 0 2px 6px rgba(0,0,0,0.2); } }
+    /* عداد السلة داخل الشريط السفلي */
+    .cart-badge-bottom {
+      position: absolute; top: -5px; right: 5px;
+      background: var(--error-red); color: white; border-radius: 50%;
+      width: 20px; height: 20px; font-size: 12px; font-weight: bold;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid white;
+    }
+
+    /* مودالات */
+    .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 1000; }
+    .modal.show { display: flex; }
+    .modal-inner { background: white; border-radius: 16px; max-width: 400px; width: 100%; padding: 20px; text-align: center; }
+    .social-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 15px 0; }
+    .social-links a { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #eee; border-radius: 10px; padding: 8px 12px; font-weight: 600; color: #111; }
+    .lang-select { width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #ddd; margin: 15px 0; }
+
+    .search-result-message { max-width: 1300px; margin: 10px auto 0; padding: 0 20px; font-weight: 600; color: var(--oil-green); }
+
+    @media (max-width: 768px) {
+      .header-container { flex-direction: column; align-items: stretch; }
+      .products-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+      .bottom-nav { overflow-x: auto; flex-wrap: nowrap; justify-content: flex-start; padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-container">
+    <div class="top-links">
+      <a href="#"><i class="fas fa-leaf"></i> <span data-i18n="top_natural">منتوجات طبيعية 100%</span></a>
+      <a href="#"><i class="fas fa-truck"></i> <span data-i18n="top_shipping">توصيل سريع</span></a>
+      <a href="#" onclick="openContact()"><i class="fas fa-headset"></i> <span data-i18n="top_contact">تواصل معنا</span></a>
+    </div>
+    <div class="top-offer"><i class="fas fa-gem"></i> <span data-i18n="top_quality">جودة تاوريرت الأصيلة</span></div>
+  </div>
+</div>
+
+<div class="main-header">
+  <div class="header-container">
+    <div class="logo"><div class="logo-text">تاوريرت<span> بيو</span></div></div>
+    <!-- أيقونة السلة تم نقلها إلى الشريط السفلي -->
+  </div>
+</div>
+
+<div class="services-icons">
+  <div class="services-grid">
+    <div class="service-card"><i class="fas fa-truck"></i><h4 data-i18n="service_fast">توصيل سريع</h4><p data-i18n="service_fast_desc">إلى جميع المدن</p></div>
+    <div class="service-card"><i class="fas fa-medal"></i><h4 data-i18n="service_quality">جودة مضمونة</h4><p data-i18n="service_quality_desc">منتوجات تاوريرت</p></div>
+    <div class="service-card"><i class="fas fa-credit-card"></i><h4 data-i18n="service_payment">دفع آمن</h4><p data-i18n="service_payment_desc">عند الاستلام</p></div>
+    <div class="service-card"><i class="fas fa-undo-alt"></i><h4 data-i18n="service_natural">منتوج طبيعي</h4><p data-i18n="service_natural_desc">بدون إضافات</p></div>
+  </div>
+</div>
+
+<div class="video-section">
+  <div class="video-title" data-i18n="video_title">🎬 فيديو تعريفي بمنتوج الزيت</div>
+  <div class="video-container"><div id="youtube-player"></div></div>
+  <div class="mute-button-container">
+    <button id="muteToggleBtn" class="mute-btn"><i class="fas fa-volume-mute"></i> <span data-i18n="mute_btn">كتم الصوت</span></button>
+  </div>
+</div>
+
+<div id="searchResultMsg" class="search-result-message"></div>
+
+<div class="section-title"><h2 data-i18n="section_oil">🫒 زيت الزيتون البكر</h2></div>
+<div class="products-grid" id="oilSection"></div>
+<div class="section-title"><h2 data-i18n="section_honey">🍯 عسل طبيعي</h2></div>
+<div class="products-grid" id="honeySection"></div>
+
+<!-- مودال السلة -->
+<div class="cart-modal" id="cartModal" onclick="closeCart()">
+  <div class="cart-inner" onclick="event.stopPropagation()">
+    <div class="cart-header-modal">
+      <h3 data-i18n="cart_title">سلة المشتريات</h3>
+      <button class="close-cart" onclick="closeCart()">&times;</button>
+    </div>
+    <div id="cartItemsList" class="cart-items-list"></div>
+    <div class="cart-total"><span data-i18n="cart_total_label">المجموع</span>: <span id="cartTotal">0</span> DH</div>
+    <input type="text" id="custName" class="cart-input" data-i18n-placeholder="form_name">
+    <input type="tel" id="custPhone" class="cart-input" data-i18n-placeholder="form_phone">
+    <input type="text" id="custCountry" class="cart-input" data-i18n-placeholder="form_country" value="المغرب">
+    <input type="text" id="custCity" class="cart-input" data-i18n-placeholder="form_city">
+    <textarea id="custAddress" rows="2" class="cart-input" data-i18n-placeholder="form_address"></textarea>
+    <input type="text" id="shippingFeeDisplay" class="cart-input cart-readonly" readonly data-i18n-placeholder="form_shipping" value="حسب الكمية" style="background:#f9f9f9;">
+    <div id="cartErrorMsg" class="error-message"></div>
+    <button class="btn-wa" onclick="sendWhatsApp()"><i class="fab fa-whatsapp"></i> <span data-i18n="confirm_order_btn">تأكيد الطلب عبر واتساب</span></button>
+    <button class="btn-clear" onclick="clearCart()" data-i18n="clear_cart_btn">إفراغ السلة</button>
+    <p style="font-size:11px; color:#777; margin-top:10px; text-align:center;" data-i18n="cart_note">عند الضغط على تأكيد سيتم فتح واتساب لإكمال الطلب</p>
+  </div>
+</div>
+
+<!-- شريط التنقل السفلي (تم إضافة أيقونة السلة) -->
+<nav class="bottom-nav">
+  <a href="#" onclick="scrollToSection('oil'); return false;"><img src="https://i.ibb.co/bg8G4S4r/Picsart-26-04-04-20-42-39-503.png" alt="زيت"><b data-i18n="nav_oil">زيت الزيتون</b></a>
+  <a href="#" onclick="scrollToSection('honey'); return false;"><img src="https://i.ibb.co/Kx7g1SRJ/Picsart-26-04-04-20-43-16-608.png" alt="عسل"><b data-i18n="nav_honey">عسل طبيعي</b></a>
+  <button onclick="openCart()">
+    <img src="https://i.ibb.co/ns8p7kR1/Picsart-26-04-04-20-42-39-503.png" alt="سلة">
+    <b data-i18n="nav_cart">السلة</b>
+    <span class="cart-badge-bottom" id="cartBadgeBottom">0</span>
+  </button>
+  <button onclick="openSearchModal()"><img src="https://i.ibb.co/mC1D1Rb9/1775786663295.png" alt="بحث"><b data-i18n="nav_search">بحث</b></button>
+  <button onclick="openContact()"><img src="https://i.ibb.co/KcW30FP6/Picsart-26-04-04-20-43-28-562.png" alt="تواصل"><b data-i18n="nav_contact">تواصل معنا</b></button>
+  <button onclick="openSettings()"><img src="https://i.ibb.co/W4051sD5/Picsart-26-04-04-20-43-38-986.png" alt="إعدادات"><b data-i18n="nav_settings">الإعدادات</b></button>
+</nav>
+
+<!-- مودال التواصل -->
+<div class="modal" id="contactModal" onclick="closeContact()">
+  <div class="modal-inner" onclick="event.stopPropagation()">
+    <h3 style="color:#556b2f;" data-i18n="contact_title">تواصل معنا</h3>
+    <p dir="ltr" style="font-weight:700; margin:10px 0;">+212 631 599 372</p>
+    <a href="https://wa.me/212631599372" target="_blank" style="display:block; background:#25D366; color:white; padding:10px; border-radius:10px; margin:10px 0;"><i class="fab fa-whatsapp"></i> <span data-i18n="contact_wa">واتساب مباشر</span></a>
+    <div class="social-links">
+      <a href="https://www.instagram.com/essadik1_2" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://t.me/mohamed_android_essadik" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+      <a href="https://pin.it/6zdFvpPPb" target="_blank"><i class="fab fa-pinterest"></i> Pinterest</a>
+      <a href="https://www.tiktok.com/@essadik1_2" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    </div>
+    <button onclick="closeContact()" style="margin-top:10px; background:none; border:none; color:#777;" data-i18n="close_btn">إغلاق</button>
+  </div>
+</div>
+
+<!-- مودال البحث -->
+<div class="modal" id="searchModal" onclick="closeSearchModal()">
+  <div class="modal-inner" onclick="event.stopPropagation()">
+    <h3 style="color:#556b2f; margin-bottom:15px;" data-i18n="search_title">🔍 بحث عن منتج</h3>
+    <input type="text" id="modalSearchInput" class="cart-input" data-i18n-placeholder="search_placeholder" style="margin-bottom:15px;">
+    <button onclick="performSearchFromModal()" style="background:var(--primary-gold); color:black; border:none; padding:10px 20px; border-radius:10px; font-weight:bold; width:100%;" data-i18n="search_btn">بحث</button>
+    <p id="modalSearchResult" style="margin-top:15px; font-size:0.9rem;"></p>
+    <button onclick="closeSearchModal()" style="margin-top:10px; background:none; border:none; color:#777;" data-i18n="close_btn">إغلاق</button>
+  </div>
+</div>
+
+<!-- مودال الإعدادات -->
+<div class="modal" id="settingsModal" onclick="closeSettings()">
+  <div class="modal-inner" onclick="event.stopPropagation()">
+    <h3 style="color:#556b2f;" data-i18n="settings_title">الإعدادات</h3>
+    <label data-i18n="settings_lang">اللغة</label>
+    <select id="langSelect" class="lang-select">
+      <option value="ar">العربية</option>
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
+    <button onclick="closeSettings()" style="background:black; color:#d4af37; border:none; padding:10px 20px; border-radius:10px; font-weight:bold; margin-top:10px;" data-i18n="save_btn">حفظ</button>
+  </div>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  // ======================== نظام الترجمة (مضاف إليه nav_cart) ========================
+  const translations = {
+    ar: {
+      top_natural: "منتوجات طبيعية 100%", top_shipping: "توصيل سريع", top_contact: "تواصل معنا", top_quality: "جودة تاوريرت الأصيلة",
+      service_fast: "توصيل سريع", service_fast_desc: "إلى جميع المدن", service_quality: "جودة مضمونة", service_quality_desc: "منتوجات تاوريرت",
+      service_payment: "دفع آمن", service_payment_desc: "عند الاستلام", service_natural: "منتوج طبيعي", service_natural_desc: "بدون إضافات",
+      video_title: "🎬 فيديو تعريفي بمنتوج الزيت", mute_btn: "كتم الصوت", section_oil: "🫒 زيت الزيتون البكر", section_honey: "🍯 عسل طبيعي",
+      cart_title: "سلة المشتريات", cart_total_label: "المجموع", form_name: "الاسم الكامل", form_phone: "رقم الهاتف", form_country: "الدولة", form_city: "المدينة",
+      form_address: "العنوان بالتفصيل (الحي، الشارع، رقم المنزل...)", form_shipping: "ثمن التوصيل (حسب الكمية)", confirm_order_btn: "تأكيد الطلب عبر واتساب",
+      clear_cart_btn: "إفراغ السلة", cart_note: "عند الضغط على تأكيد سيتم فتح واتساب لإكمال الطلب",
+      nav_oil: "زيت الزيتون", nav_honey: "عسل طبيعي", nav_cart: "السلة", nav_search: "بحث", nav_contact: "تواصل معنا", nav_settings: "الإعدادات",
+      contact_title: "تواصل معنا", contact_wa: "واتساب مباشر", close_btn: "إغلاق",
+      search_title: "🔍 بحث عن منتج", search_placeholder: "اكتب اسم المنتج...", search_btn: "بحث", settings_title: "الإعدادات", settings_lang: "اللغة", save_btn: "حفظ",
+      empty_cart: "السلة فارغة", added_to_cart: "تمت الإضافة", add_to_cart_btn: '<i class="fas fa-cart-plus"></i> أضف لسلة',
+      error_empty_cart: "⚠️ الرجاء إضافة منتجات إلى السلة أولاً", error_fill_fields: "⚠️ الرجاء ملء جميع الحقول المطلوبة",
+      search_not_found: "لا توجد منتجات تطابق", search_found: "تم العثور على", search_found_results: "منتج(ات) تطابق",
+      wa_order_title: "🛒 طلب جديد من تاوريرت بيو", wa_name: "الاسم", wa_phone: "الهاتف", wa_country: "الدولة", wa_city: "المدينة", wa_address: "العنوان",
+      wa_products: "المنتجات", wa_total: "المجموع", wa_shipping: "التوصيل", wa_shipping_value: "حسب الكمية",
+      product_oil_1l: "زيت زيتون تاوريرت 1 لتر", product_oil_5l: "زيت زيتون تاوريرت 5 لتر",
+      product_honey_1l: "عسل تاوريرت 1 لتر", product_honey_5l: "عسل تاوريرت 5 لتر",
+      dir: "rtl"
+    },
+    en: {
+      top_natural: "100% Natural Products", top_shipping: "Fast Delivery", top_contact: "Contact Us", top_quality: "Authentic Taourirt Quality",
+      service_fast: "Fast Delivery", service_fast_desc: "To all cities", service_quality: "Guaranteed Quality", service_quality_desc: "Taourirt Products",
+      service_payment: "Secure Payment", service_payment_desc: "Cash on Delivery", service_natural: "Natural Product", service_natural_desc: "No Additives",
+      video_title: "🎬 Olive Oil Product Video", mute_btn: "Mute", section_oil: "🫒 Extra Virgin Olive Oil", section_honey: "🍯 Natural Honey",
+      cart_title: "Shopping Cart", cart_total_label: "Total", form_name: "Full Name", form_phone: "Phone Number", form_country: "Country", form_city: "City",
+      form_address: "Detailed Address", form_shipping: "Shipping Fee (Depends on Quantity)", confirm_order_btn: "Confirm Order via WhatsApp",
+      clear_cart_btn: "Clear Cart", cart_note: "Clicking confirm will open WhatsApp",
+      nav_oil: "Olive Oil", nav_honey: "Honey", nav_cart: "Cart", nav_search: "Search", nav_contact: "Contact", nav_settings: "Settings",
+      contact_title: "Contact Us", contact_wa: "Direct WhatsApp", close_btn: "Close",
+      search_title: "🔍 Search Product", search_placeholder: "Type product name...", search_btn: "Search", settings_title: "Settings", settings_lang: "Language", save_btn: "Save",
+      empty_cart: "Cart is empty", added_to_cart: "Added", add_to_cart_btn: '<i class="fas fa-cart-plus"></i> Add to Cart',
+      error_empty_cart: "⚠️ Please add products to the cart first", error_fill_fields: "⚠️ Please fill in all required fields",
+      search_not_found: "No products match", search_found: "Found", search_found_results: "product(s) matching",
+      wa_order_title: "🛒 New Order from Taourirt Bio", wa_name: "Name", wa_phone: "Phone", wa_country: "Country", wa_city: "City", wa_address: "Address",
+      wa_products: "Products", wa_total: "Total", wa_shipping: "Shipping", wa_shipping_value: "Depends on quantity",
+      product_oil_1l: "Taourirt Olive Oil 1L", product_oil_5l: "Taourirt Olive Oil 5L",
+      product_honey_1l: "Taourirt Honey 1L", product_honey_5l: "Taourirt Honey 5L",
+      dir: "ltr"
+    },
+    fr: {
+      top_natural: "Produits 100% Naturels", top_shipping: "Livraison Rapide", top_contact: "Contactez-nous", top_quality: "Qualité Authentique Taourirt",
+      service_fast: "Livraison Rapide", service_fast_desc: "Vers toutes les villes", service_quality: "Qualité Garantie", service_quality_desc: "Produits Taourirt",
+      service_payment: "Paiement Sécurisé", service_payment_desc: "Paiement à la livraison", service_natural: "Produit Naturel", service_natural_desc: "Sans Additifs",
+      video_title: "🎬 Vidéo Huile d'Olive", mute_btn: "Couper le son", section_oil: "🫒 Huile d'Olive Vierge Extra", section_honey: "🍯 Miel Naturel",
+      cart_title: "Panier", cart_total_label: "Total", form_name: "Nom Complet", form_phone: "Téléphone", form_country: "Pays", form_city: "Ville",
+      form_address: "Adresse Détaillée", form_shipping: "Frais de Livraison (Selon Quantité)", confirm_order_btn: "Confirmer via WhatsApp",
+      clear_cart_btn: "Vider le Panier", cart_note: "Cliquer sur confirmer ouvrira WhatsApp",
+      nav_oil: "Huile d'Olive", nav_honey: "Miel", nav_cart: "Panier", nav_search: "Rechercher", nav_contact: "Contact", nav_settings: "Paramètres",
+      contact_title: "Contactez-nous", contact_wa: "WhatsApp Direct", close_btn: "Fermer",
+      search_title: "🔍 Rechercher un produit", search_placeholder: "Nom du produit...", search_btn: "Rechercher", settings_title: "Paramètres", settings_lang: "Langue", save_btn: "Enregistrer",
+      empty_cart: "Panier vide", added_to_cart: "Ajouté", add_to_cart_btn: '<i class="fas fa-cart-plus"></i> Ajouter au Panier',
+      error_empty_cart: "⚠️ Veuillez d'abord ajouter des produits", error_fill_fields: "⚠️ Veuillez remplir tous les champs",
+      search_not_found: "Aucun produit trouvé pour", search_found: "Trouvé", search_found_results: "produit(s) correspondant à",
+      wa_order_title: "🛒 Nouvelle Commande Taourirt Bio", wa_name: "Nom", wa_phone: "Téléphone", wa_country: "Pays", wa_city: "Ville", wa_address: "Adresse",
+      wa_products: "Produits", wa_total: "Total", wa_shipping: "Livraison", wa_shipping_value: "Selon quantité",
+      product_oil_1l: "Huile d'Olive Taourirt 1L", product_oil_5l: "Huile d'Olive Taourirt 5L",
+      product_honey_1l: "Miel Taourirt 1L", product_honey_5l: "Miel Taourirt 5L",
+      dir: "ltr"
+    }
+  };
+
+  let currentLang = localStorage.getItem('taourirt_lang') || 'ar';
+  const products = [
+    { id: 'OIL_1L', nameKey: 'product_oil_1l', price: 50, img: 'https://i.ibb.co/4RnM3xJ2/Picsart-26-03-24-13-07-52-739.jpg', category: 'oil' },
+    { id: 'OIL_5L', nameKey: 'product_oil_5l', price: 240, img: 'https://i.ibb.co/VYnHjxLr/Picsart-26-03-24-13-08-25-868.jpg', category: 'oil' },
+    { id: 'HONEY_1L', nameKey: 'product_honey_1l', price: 350, img: 'https://i.ibb.co/q3sDzzGk/Picsart-26-03-26-12-21-36-336.jpg', category: 'honey' },
+    { id: 'HONEY_5L', nameKey: 'product_honey_5l', price: 1600, img: 'https://i.ibb.co/hRZ8GGkQ/6-20260326122340.png', category: 'honey' }
+  ];
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    const t = translations[lang];
+    document.documentElement.lang = lang;
+    document.body.dir = t.dir || (lang === 'ar' ? 'rtl' : 'ltr');
+    document.querySelectorAll('[data-i18n]').forEach(el => { if (t[el.dataset.i18n]) el.innerHTML = t[el.dataset.i18n]; });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { if (t[el.dataset.i18nPlaceholder]) el.placeholder = t[el.dataset.i18nPlaceholder]; });
+    const shippingInput = document.getElementById('shippingFeeDisplay');
+    if (shippingInput) shippingInput.value = t.form_shipping || 'حسب الكمية';
+    renderProducts();
+    updateCartUI();
+  }
+
+  // ======================== YouTube ========================
+  let player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube-player', {
+      height: '100%', width: '100%', videoId: 'XxHOk_GgudE',
+      playerVars: { 'autoplay': 1, 'mute': 1, 'loop': 1, 'playlist': 'XxHOk_GgudE', 'controls': 1, 'rel': 0, 'modestbranding': 1 },
+      events: { 'onReady': onPlayerReady }
+    });
+  }
+  function onPlayerReady(event) {
+    const muteBtn = document.getElementById('muteToggleBtn');
+    const t = translations[currentLang];
+    muteBtn.addEventListener('click', function() {
+      if (player.isMuted()) {
+        player.unMute();
+        muteBtn.innerHTML = `<i class="fas fa-volume-up"></i> ${t.mute_btn}`;
+      } else {
+        player.mute();
+        muteBtn.innerHTML = `<i class="fas fa-volume-mute"></i> ${t.mute_btn}`;
+      }
+    });
+  }
+
+  // ======================== السلة ========================
+  let cart = JSON.parse(localStorage.getItem('taourirt_cart')) || [];
+  
+  function updateCartUI() {
+    const t = translations[currentLang];
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    // تحديث العداد في الشريط السفلي
+    const badgeBottom = document.getElementById('cartBadgeBottom');
+    if (badgeBottom) badgeBottom.textContent = cart.length;
+    // تحديث داخل المودال
+    const totalSpan = document.getElementById('cartTotal');
+    const listDiv = document.getElementById('cartItemsList');
+    if (totalSpan) totalSpan.textContent = total;
+    if (listDiv) {
+      if (cart.length === 0) {
+        listDiv.innerHTML = `<p style="text-align:center; padding:20px;">${t.empty_cart}</p>`;
+      } else {
+        listDiv.innerHTML = '';
+        cart.forEach((item, index) => {
+          const row = document.createElement('div');
+          row.className = 'cart-row';
+          row.innerHTML = `<span>${item.name} - ${item.price} DH</span>
+            <button onclick="removeFromCart(${index})" style="background:none; border:none; color:#e74c3c; cursor:pointer; font-size:18px;"><i class="fas fa-trash-alt"></i></button>`;
+          listDiv.appendChild(row);
+        });
+      }
+    }
+    localStorage.setItem('taourirt_cart', JSON.stringify(cart));
+  }
+
+  function animateAddButton(btn) {
+    const t = translations[currentLang];
+    const originalText = btn.innerHTML;
+    btn.innerHTML = `<i class="fas fa-check"></i> ${t.added_to_cart}`;
+    btn.classList.add('added');
+    setTimeout(() => { btn.innerHTML = originalText; btn.classList.remove('added'); }, 700);
+  }
+
+  function addToCart(productId, productName, productPrice, buttonElement) {
+    cart.push({ id: productId, name: productName, price: productPrice });
+    updateCartUI();
+    if (buttonElement) animateAddButton(buttonElement);
+  }
+
+  function removeFromCart(index) { cart.splice(index, 1); updateCartUI(); }
+  function clearCart() { if (cart.length === 0) return; cart = []; updateCartUI(); document.getElementById('cartErrorMsg').innerHTML = ''; }
+
+  // ======================== بناء المنتجات ========================
+  function renderProducts() {
+    const t = translations[currentLang];
+    const oilContainer = document.getElementById('oilSection');
+    const honeyContainer = document.getElementById('honeySection');
+    if (!oilContainer || !honeyContainer) return;
+    oilContainer.innerHTML = ''; honeyContainer.innerHTML = '';
+    products.forEach(prod => {
+      const name = t[prod.nameKey] || prod.id;
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.dataset.id = prod.id;
+      card.dataset.name = name;
+      card.dataset.category = prod.category;
+      card.innerHTML = `
+        <img class="product-img" src="${prod.img}" alt="${name}" loading="lazy">
+        <div class="product-info">
+          <div class="product-title">${name}</div>
+          <div class="product-price">${prod.price} DH</div>
+          <button class="add-to-cart-btn" data-id="${prod.id}" data-name="${name}" data-price="${prod.price}">
+            ${t.add_to_cart_btn}
+          </button>
+        </div>
+      `;
+      if (prod.category === 'oil') oilContainer.appendChild(card);
+      else honeyContainer.appendChild(card);
+    });
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        addToCart(btn.dataset.id, btn.dataset.name, parseInt(btn.dataset.price), btn);
+      });
+    });
+  }
+
+  // ======================== التمرير ========================
+  function scrollToSection(section) {
+    if (section === 'oil') document.getElementById('oilSection').scrollIntoView({ behavior: 'smooth' });
+    else document.getElementById('honeySection').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // ======================== البحث ========================
+  function performSearch(query) {
+    const t = translations[currentLang];
+    const msgDiv = document.getElementById('searchResultMsg');
+    document.querySelectorAll('.product-card').forEach(c => c.classList.remove('highlight'));
+    if (!query) { msgDiv.innerHTML = ''; return false; }
+    const matched = products.filter(p => t[p.nameKey].toLowerCase().includes(query.toLowerCase()));
+    if (matched.length === 0) {
+      msgDiv.innerHTML = `<p style="color:#c0392b;"><i class="fas fa-search"></i> ${t.search_not_found} "${query}"</p>`;
+      return false;
+    }
+    let firstMatch = null;
+    document.querySelectorAll('.product-card').forEach(card => {
+      if (card.dataset.name.toLowerCase().includes(query.toLowerCase())) {
+        card.classList.add('highlight');
+        if (!firstMatch) firstMatch = card;
+      }
+    });
+    msgDiv.innerHTML = `<p style="color:#2e7d32;"><i class="fas fa-check-circle"></i> ${t.search_found} ${matched.length} ${t.search_found_results} "${query}"</p>`;
+    if (firstMatch) firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return true;
+  }
+
+  function openSearchModal() { document.getElementById('searchModal').classList.add('show'); document.getElementById('modalSearchInput').value = ''; document.getElementById('modalSearchResult').innerHTML = ''; }
+  function closeSearchModal() { document.getElementById('searchModal').classList.remove('show'); }
+  function performSearchFromModal() {
+    const t = translations[currentLang];
+    const query = document.getElementById('modalSearchInput').value.trim();
+    const resultP = document.getElementById('modalSearchResult');
+    if (!query) { resultP.innerHTML = `<span style="color:#c0392b;">${t.error_fill_fields}</span>`; return; }
+    const success = performSearch(query);
+    resultP.innerHTML = success ? `<span style="color:#2e7d32;">${t.search_found}</span>` : `<span style="color:#c0392b;">${t.search_not_found}</span>`;
+    if (success) closeSearchModal();
+  }
+
+  // ======================== واتساب ========================
+  function validateCartFields() {
+    const fields = { name: 'custName', phone: 'custPhone', country: 'custCountry', city: 'custCity', address: 'custAddress' };
+    let allFilled = true;
+    document.querySelectorAll('.cart-input').forEach(inp => inp.classList.remove('error'));
+    for (let key in fields) {
+      const el = document.getElementById(fields[key]);
+      if (!el.value.trim()) { el.classList.add('error'); allFilled = false; }
+    }
+    return allFilled;
+  }
+
+  function sendWhatsApp() {
+    const t = translations[currentLang];
+    const errorDiv = document.getElementById('cartErrorMsg');
+    if (cart.length === 0) { errorDiv.innerHTML = t.error_empty_cart; return; }
+    if (!validateCartFields()) { errorDiv.innerHTML = t.error_fill_fields; return; }
+    errorDiv.innerHTML = '';
+    const name = document.getElementById('custName').value.trim();
+    const phone = document.getElementById('custPhone').value.trim();
+    const country = document.getElementById('custCountry').value.trim();
+    const city = document.getElementById('custCity').value.trim();
+    const address = document.getElementById('custAddress').value.trim();
+    const total = cart.reduce((s, i) => s + i.price, 0);
+    let msg = `*${t.wa_order_title}*\n\n`;
+    msg += `👤 *${t.wa_name}:* ${name}\n📞 *${t.wa_phone}:* ${phone}\n🌍 *${t.wa_country}:* ${country}\n🏙️ *${t.wa_city}:* ${city}\n📍 *${t.wa_address}:* ${address}\n\n`;
+    msg += `📦 *${t.wa_products}:*\n`;
+    cart.forEach((item, idx) => { msg += `${idx+1}. ${item.name} - ${item.price} DH\n`; });
+    msg += `\n💰 *${t.wa_total}:* ${total} DH\n🚚 *${t.wa_shipping}:* ${t.wa_shipping_value}\n\n🔗 ${window.location.href}`;
+    window.open(`https://wa.me/212631599372?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  // ======================== المودالات ========================
+  function openCart() { document.getElementById('cartModal').classList.add('show'); document.getElementById('cartErrorMsg').innerHTML = ''; document.querySelectorAll('.cart-input').forEach(inp => inp.classList.remove('error')); }
+  function closeCart() { document.getElementById('cartModal').classList.remove('show'); }
+  function openContact() { document.getElementById('contactModal').classList.add('show'); }
+  function closeContact() { document.getElementById('contactModal').classList.remove('show'); }
+  function openSettings() { document.getElementById('settingsModal').classList.add('show'); }
+  function closeSettings() { document.getElementById('settingsModal').classList.remove('show'); }
+
+  // ======================== اللغة ========================
+  const langSelect = document.getElementById('langSelect');
+  if (langSelect) {
+    langSelect.value = currentLang;
+    langSelect.addEventListener('change', (e) => {
+      const newLang = e.target.value;
+      localStorage.setItem('taourirt_lang', newLang);
+      applyLanguage(newLang);
+    });
+  }
+
+  window.onload = () => { applyLanguage(currentLang); updateCartUI(); };
+  window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) document.querySelectorAll('.modal').forEach(m => m.classList.remove('show'));
+    if (e.target.classList.contains('cart-modal')) closeCart();
+  });
+
+  // تعريض الدوال
+  window.addToCart = addToCart; window.removeFromCart = removeFromCart; window.clearCart = clearCart;
+  window.sendWhatsApp = sendWhatsApp; window.openCart = openCart; window.closeCart = closeCart;
+  window.openContact = openContact; window.closeContact = closeContact; window.openSettings = openSettings; window.closeSettings = closeSettings;
+  window.scrollToSection = scrollToSection; window.openSearchModal = openSearchModal; window.closeSearchModal = closeSearchModal; window.performSearchFromModal = performSearchFromModal;
+</script>
+</body>
+</html>
